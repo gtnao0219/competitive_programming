@@ -1,3 +1,6 @@
+// https://atcoder.jp/contests/abc079/tasks/abc079_c
+// bit全探索
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

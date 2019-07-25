@@ -1,3 +1,5 @@
+// https://atcoder.jp/contests/arc029/tasks/arc029_1
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -20,26 +22,24 @@ typedef long long ll;
 
 void Main()
 {
-	string s; cin >> s;
-	int n = s.size() - 1;
-	ll res = 0;
-	for (int bit = 0; bit < (1<<n); ++bit) {
-        vector<int> S;
-        for (int i = 0; i < n; ++i) {
+    int N; cin >> N;
+    int t[10];
+    rep(i, N) cin >> t[i];
+    
+    int res = 1e9;
+    for (int bit = 0; bit < (1<<N); ++bit) {
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int i = 0; i < N; ++i) {
             if (bit & (1 << i)) {
-                S.push_back(i + 1);
+                sum1 += t[i];
+            } else {
+                sum2 += t[i];
             }
         }
-		int itr = 0;
-		S.push_back(n + 1);
-		rep(i, S.size())
-		{
-			string str_num = s.substr(itr, S[i] - itr);
-			res += atol(str_num.c_str());
-			itr = S[i];
-		}
+        res = min(res, max(sum1, sum2));
     }
-	cout << res << endl;
+    cout << res << endl;
 }
 
 int main()
