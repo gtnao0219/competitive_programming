@@ -1,3 +1,6 @@
+// https://atcoder.jp/contests/tdpc/tasks/tdpc_number
+// 桁DP
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

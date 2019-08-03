@@ -18,30 +18,10 @@ using namespace std;
 
 typedef long long ll;
 
-ll gcd(ll a, ll b)
-{
-    if (b == 0) return a;
-    return gcd(b, a % b);
-}
-
-ll lcm(ll a, ll b)
-{
-    ll n = gcd(a, b);
-    return a / n * b;
-}
-
 void Main()
 {
-    int N; cin >> N;
-    ll T[110];
-    rep(i, N) cin >> T[i];
-
-    ll res = 1;
-    rep(i, N)
-    {
-        res = lcm(T[i], res);
-    }
-    cout << res << endl;
+    int N, W; cin >> N >> W;
+    cout << (N - 1) << endl;
 }
 
 int main()

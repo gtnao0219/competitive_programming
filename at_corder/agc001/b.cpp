@@ -10,7 +10,6 @@
 #include <queue>
 #include <set>
 #include <map>
-#include<iomanip>
 
 using namespace std;
 
@@ -19,18 +18,26 @@ using namespace std;
 
 typedef long long ll;
 
-template<class T>bool chmax(T &a, const T &b) { if (a<b) { a = b; return 1; } return 0; }
-template<class T>bool chmin(T &a, const T &b) { if (b<a) { a = b; return 1; } return 0; }
-
 void Main()
 {
-
+	ll N, X; cin >> N >> X;
+	ll res = N;
+	ll a = N - X;
+	ll b = X;
+	while (b != 0) {
+		ll div = a / b;
+		ll mod = a % b;
+		res += div * 2 * b;
+		if (mod == 0) res -= b;
+		a = b;
+		b = mod;
+	}
+	cout << res << endl;
 }
 
 int main()
 {
-	cin.tie(nullptr);
+    cin.tie(nullptr);
 	ios_base::sync_with_stdio(false);
-	cout << fixed << setprecision(15);
 	Main();
 }

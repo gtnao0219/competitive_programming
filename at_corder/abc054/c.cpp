@@ -1,3 +1,6 @@
+// https://atcoder.jp/contests/abc054/tasks/abc054_c
+// next permutation
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

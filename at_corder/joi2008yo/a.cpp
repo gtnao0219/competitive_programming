@@ -1,3 +1,6 @@
+// https://atcoder.jp/contests/joi2008yo/tasks/joi2008yo_a
+// greedy coin
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -10,7 +13,6 @@
 #include <queue>
 #include <set>
 #include <map>
-#include<iomanip>
 
 using namespace std;
 
@@ -19,18 +21,23 @@ using namespace std;
 
 typedef long long ll;
 
-template<class T>bool chmax(T &a, const T &b) { if (a<b) { a = b; return 1; } return 0; }
-template<class T>bool chmin(T &a, const T &b) { if (b<a) { a = b; return 1; } return 0; }
-
 void Main()
 {
-
+    int coin[6] = {500, 100, 50, 10, 5, 1};
+    int _n; cin >> _n;
+    int n = 1000 - _n;
+    int res = 0;
+    rep(i,6) {
+        int div = n / coin[i];
+        n -= coin[i] * div;
+        res += div;
+    }
+    cout << res << endl;
 }
 
 int main()
 {
-	cin.tie(nullptr);
+    cin.tie(nullptr);
 	ios_base::sync_with_stdio(false);
-	cout << fixed << setprecision(15);
 	Main();
 }

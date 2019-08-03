@@ -1,3 +1,7 @@
+// https://onlinejudge.u-aizu.ac.jp/challenges/search/titles/0583
+// 最大公約数、約数
+// 公約数は最大公約数の約数
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -35,7 +39,6 @@ vector<int> divisor(int n)
             }
         }
     }
-    sort(res.begin(), res.end());
     return res;
 }
 
@@ -49,6 +52,7 @@ void Main()
         gcdnum = gcd(gcdnum, a[2]);
     }
     vector<int> res = divisor(gcdnum);
+    sort(res.begin(), res.end());
     rep(i, res.size()) cout << res[i] << endl;
 }
 

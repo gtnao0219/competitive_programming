@@ -1,3 +1,6 @@
+// https://atcoder.jp/contests/abc070/tasks/abc070_c
+// 最小公倍数
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -10,7 +13,6 @@
 #include <queue>
 #include <set>
 #include <map>
-#include<iomanip>
 
 using namespace std;
 
@@ -19,18 +21,35 @@ using namespace std;
 
 typedef long long ll;
 
-template<class T>bool chmax(T &a, const T &b) { if (a<b) { a = b; return 1; } return 0; }
-template<class T>bool chmin(T &a, const T &b) { if (b<a) { a = b; return 1; } return 0; }
+ll gcd(ll a, ll b)
+{
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+ll lcm(ll a, ll b)
+{
+    ll n = gcd(a, b);
+    return a / n * b;
+}
 
 void Main()
 {
+    int N; cin >> N;
+    ll T[110];
+    rep(i, N) cin >> T[i];
 
+    ll res = 1;
+    rep(i, N)
+    {
+        res = lcm(T[i], res);
+    }
+    cout << res << endl;
 }
 
 int main()
 {
-	cin.tie(nullptr);
+    cin.tie(nullptr);
 	ios_base::sync_with_stdio(false);
-	cout << fixed << setprecision(15);
 	Main();
 }
